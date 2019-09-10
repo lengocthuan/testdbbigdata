@@ -92,6 +92,9 @@ class UserController extends Controller
 
     public function exportToCsv()
     {
+        // /etc/nginx/sites-available/default.conf
+        //./nginx.conf:/etc/nginx/nginx.conf
+        set_time_limit(300);
         $data = User::all()->chunk(200);
         $filename = "users.csv";
         $handle = fopen($filename, 'w');

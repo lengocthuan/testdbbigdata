@@ -9,6 +9,7 @@ services:
       - db
     volumes:
       - .:/var/www/app
+      - ./default.conf:/etc/nginx/sites-available/default.conf
     environment:
       - PHP_MEM_LIMIT=1024M
   db:
